@@ -10,7 +10,7 @@ screen.fill((0,0,0))
 #check
 rows, cols = 3, 3
 matrix = [[-1 for _ in range(cols)] for _ in range(rows)]
-player=[pygame.image.load('pygame/project3/resource/a.png') , pygame.image.load('pygame/project3/resource/b.png') ]
+player=[pygame.image.load('resource/a.png') , pygame.image.load('resource/b.png') ]
 turn=True
 move=9
 run=True
