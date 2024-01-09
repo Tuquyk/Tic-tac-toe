@@ -21,16 +21,20 @@ while run:
             run =False
             quit=True
     px,py= pygame.mouse.get_pos()
+    if(px>599):
+        px=599
+    if(py>599):
+        py=599
     if pygame.mouse.get_pressed()[0] == 1:
         if move%2==1:
-            if matrix[int(px/200)][int(py/200)]==-1:
-                matrix[int(px/200)][int(py/200)]=1
-                screen.blit(player[0], (int(px/200)*220,int(py/200)*220))
+            if matrix[px//200][py//200]==-1:
+                matrix[px//200][py//200]=1
+                screen.blit(player[0], ((px//200)*220,(py//200)*220))
                 move=move-1
         elif move%2==0:
-            if matrix[int(px/200)][int(py/200)]==-1:
-                matrix[int(px/200)][int(py/200)]=0
-                screen.blit(player[1], (int(px/200)*220,int(py/200)*220))
+            if matrix[px//200][py//200]==-1:
+                matrix[px//200][py//200]=0
+                screen.blit(player[1], ((px//200)*220,(py//200)*220))
                 move=move-1
         for i in range(3):
             if matrix[i][0]==matrix[i][1]==matrix[i][2]!=-1:
@@ -40,12 +44,6 @@ while run:
             if matrix[0][i]==matrix[1][i]==matrix[2][i]!=-1:
                 winner=matrix[0][i]
                 run=False
-            
-            
-            
-    
-    
-    #4 lines
     pygame.draw.rect(screen, (255,255,255), (200,0,20,640))
     pygame.draw.rect(screen, (255,255,255), (420,0,20,640))
     pygame.draw.rect(screen, (255,255,255), (0,200,640,20))
